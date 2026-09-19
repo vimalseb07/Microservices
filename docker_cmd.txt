@@ -1,0 +1,14 @@
+docker run --name product-service-postgres \
+  -e POSTGRES_PASSWORD=productservice \
+  -p 5432:5432 \
+  -v postgres_data:/var/lib/postgresql/data \
+  -d postgres
+
+
+docker run --name product-service-postgres -e POSTGRES_PASSWORD=productservice -p 5432:5432 -v product_data:/var/lib/postgresql/data -d postgres
+docker run --name order-service-postgres -e POSTGRES_PASSWORD=orderservice -p 5433:5432 -v order_data:/var/lib/postgresql/data -d postgres
+
+
+docker exec -it product-service-postgres psql -U postgres
+docker exec -it order-service-postgres psql -U postgres
+
