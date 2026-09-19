@@ -1,3 +1,6 @@
+--
+DOCKER COMMANDS
+--
 docker run --name product-service-postgres \
   -e POSTGRES_PASSWORD=productservice \
   -p 5432:5432 \
