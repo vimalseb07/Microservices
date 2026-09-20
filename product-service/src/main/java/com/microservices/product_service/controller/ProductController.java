@@ -15,15 +15,14 @@ import com.microservices.product_service.dto.ProductRequest;
 import com.microservices.product_service.dto.ProductResponse;
 import com.microservices.product_service.service.ProductService;
 
+import lombok.RequiredArgsConstructor;
+
 @RestController 
 @RequestMapping ("/api/v1/product")
+@RequiredArgsConstructor 
 public class ProductController {
 
     public final ProductService productService;
-
-    public ProductController(ProductService productService){
-        this.productService = productService;
-    }
 
     @GetMapping ("/getProducts")
     public ResponseEntity<ApiResponse<List<ProductResponse>>> getAllProducts (@RequestBody ProductRequest productRequest) {

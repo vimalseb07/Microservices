@@ -1,7 +1,6 @@
 package com.microservices.product_service.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,19 +12,14 @@ import com.microservices.product_service.repository.ProductRepository;
 import com.microservices.product_service.utility.ProductBuilderFromProductRequest;
 import com.microservices.product_service.utility.ProductResponseConverter;
 
+import lombok.RequiredArgsConstructor;
+
 @Service 
+@RequiredArgsConstructor 
 public class ProductService {
     private final ProductRepository productRepository;
     private final ProductResponseConverter productResponseConverter;
     private final ProductBuilderFromProductRequest productBuilderFromProductRequest;
-
-    public ProductService (ProductRepository productRepository, ProductResponseConverter productResponseConverter
-            ,ProductBuilderFromProductRequest productBuilderFromProductRequest
-            ){
-        this.productRepository = productRepository;
-        this.productResponseConverter = productResponseConverter;
-        this.productBuilderFromProductRequest = productBuilderFromProductRequest;
-    }
 
     public List<ProductResponse> getAllProducts(ProductRequest productRequest){
         return productResponseConverter.convert(productRepository.findByNameContaining(productRequest.getName()));
