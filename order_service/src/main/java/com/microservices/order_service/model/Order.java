@@ -39,10 +39,8 @@ public class Order {
     @Column (nullable = false)
     private Integer totalAmount;
 
-    @Column (nullable = false)
     private String shippingAddress;
 
-    @Column (nullable = false)
     private String paymentId;
 
     @Column (nullable = false)

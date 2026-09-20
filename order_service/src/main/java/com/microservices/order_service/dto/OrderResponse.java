@@ -1,5 +1,6 @@
 package com.microservices.order_service.dto;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
 import lombok.AllArgsConstructor;
@@ -11,7 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class OrderResponse {
+public class OrderResponse implements Serializable{
     private String id;
     private String userId;
     private Integer totalAmount;

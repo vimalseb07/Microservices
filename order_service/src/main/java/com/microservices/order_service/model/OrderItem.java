@@ -59,4 +59,8 @@ public class OrderItem {
     public void onPreUpdate() {
         updatedAt = LocalDateTime.now();
     }
+
+    public Integer getItemTotal(){
+        return price * quantity;
+    }
 }

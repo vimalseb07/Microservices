@@ -34,4 +34,8 @@ public class OrderResponseBuild implements Converter<OrderResponse,Order>{
                 .build();
     }
 
+    public List<OrderResponse> convert(List<Order> orderList){
+        return orderList.stream().map(this :: convert).toList();
+    }
+
 }
