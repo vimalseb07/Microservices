@@ -25,7 +25,9 @@ public class ProductResponseConverter implements Converter<ProductResponse, Prod
 
     @Override
     public List<ProductResponse> convert(List<Product> products) {
-        return products.stream().map(product -> convert(product)).collect(Collectors.toList());
+        // return products.stream().map(product -> convert(product)).collect(Collectors.toList());
+        return products.stream().map(this :: convert).collect(Collectors.toList());
+        
     }
 
 }
