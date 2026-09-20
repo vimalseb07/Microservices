@@ -25,10 +25,10 @@ public interface ProductRepository extends JpaRepository<Product, String> {
     List<Product> findByStockQuantityBetween(int min, int max);
 
     // ✅ Find by Price greater than a value
-    List<Product> findByPriceGreaterThan(int quantity);
+    List<Product> findByPriceGreaterThan(int price);
 
     // ✅ Find by Price less than a value
-    List<Product> findByPriceLessThan(int quantity);
+    List<Product> findByPriceLessThan(int price);
 
     // ✅ Find by Price between two values
     List<Product> findByPriceBetween(int min, int max);
