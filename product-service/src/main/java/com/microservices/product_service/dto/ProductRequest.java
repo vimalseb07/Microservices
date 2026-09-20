@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor 
 @Builder 
 public class ProductRequest implements Serializable{
-
+    /* Data Transfer Object */
     private String id;
     private String name;
     private String description;
