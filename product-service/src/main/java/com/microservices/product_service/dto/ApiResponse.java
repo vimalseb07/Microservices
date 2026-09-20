@@ -17,4 +17,8 @@ public class ApiResponse<T> {
         return new ApiResponse<>(true, message, data);
     }
 
+    public static <T> ApiResponse<T> fail(T data, String message){
+        return new ApiResponse<>(false, message, data);
+    }
+
 }

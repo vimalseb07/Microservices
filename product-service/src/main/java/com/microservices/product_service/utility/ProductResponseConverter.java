@@ -17,6 +17,7 @@ public class ProductResponseConverter implements Converter<ProductResponse, Prod
                                 .name(product.getName())
                                 .description((product.getDescription()))
                                 .stockQuantity(product.getStockQuantity())
+                                .price((product.getPrice()))
                                 .createdAt(product.getCreatedAt())
                                 .updatedAt(product.getUpdatedAt())
                                 .build();

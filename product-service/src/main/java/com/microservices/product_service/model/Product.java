@@ -19,7 +19,8 @@ import lombok.Setter;
 @Builder 
 public class Product implements Serializable {
 
-    @Id     
+    @Id    
+    @GeneratedValue (strategy = GenerationType.UUID) 
     private String id;
 
     @Column(nullable = false)
@@ -29,6 +30,9 @@ public class Product implements Serializable {
 
     @Column (nullable = false)
     private Integer stockQuantity;
+
+    @Column (nullable = false)
+    private Integer price;
 
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
