@@ -4,9 +4,11 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import com.microservices.product_service.model.Product;
 
+@Repository 
 public interface ProductRepository extends JpaRepository<Product, String> {
     
     // ✅ Find by exact match
