@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>com.microservices</groupId>
 	<artifactId>payment-service</artifactId>
-	<version>0.0.1</version>
+	<version>{module.version}</version>
 	<name/>
 	<description/>
 	<url/>
@@ -33,6 +33,11 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-webmvc</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.microservices</groupId>
+			<artifactId>ecommerce-common-lib</artifactId>
+			<version>{module.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.postgresql</groupId>

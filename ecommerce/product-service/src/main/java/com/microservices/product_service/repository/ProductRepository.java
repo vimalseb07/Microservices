@@ -2,6 +2,7 @@ package com.microservices.product_service.repository;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -16,6 +17,8 @@ public interface ProductRepository extends JpaRepository<Product, String> {
 
     // ✅ Find by partial match (LIKE %keyword%)
     List<Product> findByNameContaining(String keyword);
+
+    Optional<Product> findByIdAndStockQuantityGreaterThanEqual(String id, int quantity);
 
     // ✅ Find by stock quantity greater than a value
     List<Product> findByStockQuantityGreaterThan(int quantity);

@@ -1,4 +1,4 @@
-package com.microservices.product_service.dto;
+package com.microservices.order_service.dto.client;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;

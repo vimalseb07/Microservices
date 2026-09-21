@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.microservices.order_service.dto.ApiResponse;
+import com.microservices.common.lib.dto.ApiResponse;
 import com.microservices.order_service.dto.OrderRequest;
 import com.microservices.order_service.dto.OrderResponse;
 import com.microservices.order_service.service.OrderService;
@@ -31,7 +31,11 @@ public class OrderController {
 
     @PostMapping ("/placeOrder")
     public ResponseEntity<ApiResponse<OrderResponse>> placeOrder(@RequestBody OrderRequest orderRequest){
-        return ResponseEntity.ok(ApiResponse.success(orderService.placeOrder(orderRequest), "Order Successfully placed."));
+        try{
+            return ResponseEntity.ok(ApiResponse.success(orderService.placeOrder(orderRequest), "Order Successfully placed."));
+        } catch (Exception e){
+            return ResponseEntity.ok(ApiResponse.fail(null, e.getLocalizedMessage())); 
+        }
     }
 
 }

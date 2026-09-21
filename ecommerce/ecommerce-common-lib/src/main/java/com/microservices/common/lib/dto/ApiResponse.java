@@ -1,4 +1,4 @@
-package com.microservices.product_service.dto;
+package com.microservices.common.lib.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

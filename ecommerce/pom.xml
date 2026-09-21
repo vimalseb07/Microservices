@@ -12,12 +12,14 @@
         <module>product-service</module>
         <module>order-service</module>
         <module>payment-service</module>
+        <module>ecommerce-common-lib</module>
     </modules>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <java.version>17</java.version>
+        <module.version>0.0.1</module.version>
     </properties>
 
     <parent>
@@ -39,5 +41,6 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+
     </dependencies>
 </project>
