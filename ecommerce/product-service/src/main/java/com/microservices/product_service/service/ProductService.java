@@ -45,4 +45,12 @@ public class ProductService {
         productRepository.save(product);
         return productResponseConverter.convert(product);
     }
+
+    public List<ProductResponse> availableProducts(List<ProductRequest> productRequests){
+        List<Product> availableList = productRequests.stream().map(productRequest -> {
+            return productRepository.findByIdAndStockQuantityGreaterThanEqual(productRequest.getId(), productRequest.getStockQuantity())
+            .orElse(Product.builder().name(productRequest.getId()).stockQuantity(0).build());
+        }).toList();
+        return productResponseConverter.convert(availableList);
+    }
 }

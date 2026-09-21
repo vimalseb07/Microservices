@@ -19,6 +19,7 @@ public class ProductResponse implements Serializable {
     private String description;
     private Integer stockQuantity;
     private Integer price;
+    private Boolean inStock;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 

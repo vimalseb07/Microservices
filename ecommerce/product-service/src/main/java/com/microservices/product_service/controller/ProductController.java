@@ -51,4 +51,9 @@ public class ProductController {
         }
     }
 
+    @PostMapping ("/checkStock")
+    public ResponseEntity<ApiResponse<List<ProductResponse>>> checkStock (@RequestBody List<ProductRequest> productRequests) {
+        return ResponseEntity.ok(ApiResponse.success(productService.availableProducts(productRequests), "Available Products Retrieved")); 
+    } 
+
 }
