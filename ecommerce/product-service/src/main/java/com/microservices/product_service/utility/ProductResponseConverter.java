@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
+import com.microservices.common.lib.utility.Converter;
 import com.microservices.product_service.dto.ProductResponse;
 import com.microservices.product_service.model.Product;
 
@@ -23,11 +24,10 @@ public class ProductResponseConverter implements Converter<ProductResponse, Prod
                                 .build();
     }
 
-    @Override
+    
     public List<ProductResponse> convert(List<Product> products) {
         // return products.stream().map(product -> convert(product)).collect(Collectors.toList());
         return products.stream().map(this :: convert).collect(Collectors.toList());
-        
     }
 
 }

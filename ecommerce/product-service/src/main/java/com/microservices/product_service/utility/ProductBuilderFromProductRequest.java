@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.microservices.common.lib.utility.Converter;
 import com.microservices.product_service.dto.ProductRequest;
 import com.microservices.product_service.model.Product;
 
@@ -20,7 +21,6 @@ public class ProductBuilderFromProductRequest implements Converter<Product, Prod
                                 .build();
     }
 
-    @Override
     public List<Product> convert(List<ProductRequest> ProductRequest) {
         return new ArrayList<>();
     }

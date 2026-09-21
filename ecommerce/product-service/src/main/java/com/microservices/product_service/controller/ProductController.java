@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.microservices.product_service.dto.ApiResponse;
+import com.microservices.common.lib.dto.ApiResponse;
 import com.microservices.product_service.dto.ProductRequest;
 import com.microservices.product_service.dto.ProductResponse;
 import com.microservices.product_service.service.ProductService;

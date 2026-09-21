@@ -44,6 +44,11 @@
 			<artifactId>spring-boot-starter-webmvc-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.microservices</groupId>
+			<artifactId>ecommerce-common-lib</artifactId>
+			<version>{module.version}</version>
+		</dependency>
 	</dependencies>
 
 	<build>

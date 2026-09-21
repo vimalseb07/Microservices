@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.microservices.order_service.dto.ApiResponse;
+import com.microservices.common.lib.dto.ApiResponse;
 import com.microservices.order_service.dto.OrderRequest;
 import com.microservices.order_service.dto.OrderResponse;
 import com.microservices.order_service.service.OrderService;
