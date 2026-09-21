@@ -31,7 +31,11 @@ public class OrderController {
 
     @PostMapping ("/placeOrder")
     public ResponseEntity<ApiResponse<OrderResponse>> placeOrder(@RequestBody OrderRequest orderRequest){
-        return ResponseEntity.ok(ApiResponse.success(orderService.placeOrder(orderRequest), "Order Successfully placed."));
+        try{
+            return ResponseEntity.ok(ApiResponse.success(orderService.placeOrder(orderRequest), "Order Successfully placed."));
+        } catch (Exception e){
+            return ResponseEntity.ok(ApiResponse.fail(null, e.getLocalizedMessage())); 
+        }
     }
 
 }
