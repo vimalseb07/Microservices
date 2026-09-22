@@ -25,7 +25,7 @@ import lombok.RequiredArgsConstructor;
 public class OrderService {
 
     private final OrderRepository orderRepository;
-    private final WebClient webClient;
+    private final WebClient.Builder webClientBuilder;
     private final OrderResponseBuild orderResponseBuild;
     private final OrderModelBuild orderModelBuild;
     private final ProductRequestConverter productRequestConverter;
@@ -58,8 +58,8 @@ public class OrderService {
     }
 
     private Boolean checkStockWebClientCall(List<ProductRequest> productList){
-        List<ProductResponse> productResponses = webClient.post()
-            .uri("http://localhost:8080/api/v1/product/checkStock")
+        List<ProductResponse> productResponses = webClientBuilder.build().post()
+            .uri("http://product-service/api/v1/product/checkStock")
             .bodyValue(productList)
             .retrieve()
             .bodyToMono(new ParameterizedTypeReference<ApiResponse<List<ProductResponse>>>() {}) 
