@@ -10,7 +10,7 @@
 	<groupId>com.microservices</groupId>
 	<artifactId>payment-service</artifactId>
 	<version>{module.version}</version>
-	<name/>
+    <name>Payment Service</name>
 	<description/>
 	<url/>
 	<licenses>

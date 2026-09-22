@@ -10,7 +10,7 @@
 	<groupId>com.microservices</groupId>
 	<artifactId>order_service</artifactId>
 	<version>{module.version}</version>
-	<name/>
+    <name>Order Service</name>
 	<description/>
 	<url/>
 	<licenses>
