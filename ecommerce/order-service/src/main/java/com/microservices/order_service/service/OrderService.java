@@ -66,7 +66,7 @@ public class OrderService {
             .map(ApiResponse::getData) 
             .block();
 
-        return productResponses.stream().allMatch(ProductResponse :: getInStock);
+        return productResponses.stream().allMatch(ProductResponse :: getInStock) ;
 
     }
 }
