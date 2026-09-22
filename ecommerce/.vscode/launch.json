@@ -4,7 +4,13 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-
+        {
+            "type": "java",
+            "name": "EurekaDiscoveryServerApplication",
+            "request": "launch",
+            "mainClass": "com.microservices.eurekaserver.EurekaDiscoveryServerApplication",
+            "projectName": "eureka-discovery-server"
+        },
         {
             "type": "java",
             "name": "ProductServiceApplication",
@@ -25,6 +31,14 @@
             "request": "launch",
             "mainClass": "com.microservices.payment_service.PaymentServiceApplication",
             "projectName": "payment-service"
+        },
+        {
+            "type": "java",
+            "name": "Payment - Instance 2",
+            "request": "launch",
+            "mainClass": "com.microservices.payment_service.PaymentServiceApplication",
+            "projectName": "payment-service",
+            "vmArgs": "-Dserver.port=8088"
         }
     ]
 }
